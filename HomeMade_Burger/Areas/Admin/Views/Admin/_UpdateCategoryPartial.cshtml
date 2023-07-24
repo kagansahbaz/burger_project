@@ -1,0 +1,25 @@
+﻿@model UpdateCategoryVM
+
+<h4>Update Category</h4>
+<hr />
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @TempData["Message"]
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input type="hidden" readonly id="update-category-id" asp-for="CategoryId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input id="update-category-name" asp-for="CategoryName" placeholder="Category Name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-warning" onclick="UpdateCategory(@Model.CategoryId)" />
+        </div>
+    </div>
+</div>

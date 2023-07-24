@@ -1,0 +1,34 @@
+﻿@model AddProductVM
+
+<h4>Add Product</h4>
+<hr />
+@if (!ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="All" class="alert alert-danger">
+        @TempData["Message"]
+    </div>
+}
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input id="create-product-name" placeholder="Product Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input id="create-product-price" placeholder="Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input id="create-product-photo" placeholder="Photo URL" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input id="create-product-description" placeholder="Description" class="form-control" />
+        </div>
+        <div class="form-group">
+            <select id="create-product-categoryId" asp-for="CategoryID" class="form-control" asp-items="ViewBag.Category"></select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-success" onclick="ProductAdd()" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center bg-dark" href="index.html">
+        <div class="sidebar-brand-icon">
+            <i id="star-icon" class="far fa-star fa-spin" style="color: #ffd93d;"></i>
+        </div>
+        <div id="star-brother" class="sidebar-brand-text mx-3" style="color: #ffd93d;">Star Brothers</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link btn" onclick="GetOrderList()">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Orders</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Divider -->
+    <!-- Heading -->
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+           aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Edit Panel</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item btn" onclick="GetProductList()">
+                    <i class="fas fa-hamburger"></i>
+                    <span class="ml-2">Products</span>
+                </a>
+                <a class="collapse-item btn" onclick="GetCategoryList()">
+                    <i class="fas fa-table"></i>
+                    <span>Category</span></a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Tables -->
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>

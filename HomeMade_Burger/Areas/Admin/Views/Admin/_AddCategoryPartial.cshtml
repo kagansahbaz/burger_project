@@ -1,0 +1,21 @@
+﻿@model AddCategoryVM
+
+<h4>Add Category</h4>
+<hr />
+@if (!ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="All" class="alert alert-danger">
+        @TempData["Message"]
+    </div>
+}
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input id="create-category-name" placeholder="Category Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-success" onclick="CategoryAdd()" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Product>
+
+<div class="flex-column bg-trasparent p-3 mt-2">
+    <div class="row">
+        @{
+            int i = 0;
+        }
+        @foreach (Product item in ViewBag.ProductList as IEnumerable<Product>)
+        {
+            i++;
+
+            <div class="col-md-4 mt-2">
+                <div class="card h-100 shadow-lg border-secondary border-1 rounded-2">
+                    <img src="@item.Photo" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="clearfix mb-3">
+                            <span class="float-start badge rounded-pill bg-primary fs-6">@item.ProductName</span>
+                            <span class="float-end price-hp fs-6">@item.Price TL</span>
+                        </div>
+                        <h5 class="card-title">@item.Description</h5>
+                        <div>
+                            <div class="form-outline">
+                                <label class="form-label" for="typeNumber">Adet</label>
+                                <input id=@i value="1" min="1" type="number" class="form-control" />
+                                
+                            </div>
+                        </div>
+                        <div class="text-center my-4">
+                            <button type="button" id="btn-sepete-menu-ekle" class="btn btn-success" onclick="AddProductToBasket(@item.ProductID,$('#@i').val())">Sepete Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

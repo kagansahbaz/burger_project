@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<Order>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                OrderID
+            </th>
+            <th>
+                Order Time
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Order item in Model)
+        {
+            <tr>
+                <td>
+                    @item.OrderID
+                </td>
+                <td>
+                    @item.OrderDate.ToString("dddd, dd/MMM/yyyy - HH:mm:ss")
+                </td>
+                <td>
+                    @item.User.UserName
+                </td>
+                <td>
+                    <a class="btn btn-success">Accept</a>
+                    <a onclick="OrderDetails(@item.OrderID)" class="btn btn-warning">Listele</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

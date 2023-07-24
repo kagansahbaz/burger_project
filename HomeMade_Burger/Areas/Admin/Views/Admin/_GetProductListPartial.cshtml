@@ -1,0 +1,51 @@
+﻿@using HomeMade_Burger.Areas.Admin.Models
+@model IEnumerable<Product>
+
+<div>
+    <a class="btn btn-success" onclick="GetProductPartial()">Add Product</a>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Product Price
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    <a class="btn btn-warning" onclick="GetUpdateProductPartial(@item.ProductID)"> Update </a>
+                    <a class="btn btn-danger" onclick="DeleteProduct(@item.ProductID)">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

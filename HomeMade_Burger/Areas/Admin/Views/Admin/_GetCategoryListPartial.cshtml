@@ -1,0 +1,38 @@
+﻿@using HomeMade_Burger.Areas.Admin.Models
+@model IEnumerable<Category>
+
+<div>
+    <a class="btn btn-success" onclick="GetCategoryPartial()">Add Category</a>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Category Name
+            </th>            
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.CategoryID
+                </td>
+                <td>
+                    @item.CategoryName
+                </td>
+                <td>
+                    <a class="btn btn-warning" onclick="GetUpdateCategoryPartial(@item.CategoryID)">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

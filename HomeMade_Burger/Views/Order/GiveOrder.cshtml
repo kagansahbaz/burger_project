@@ -1,0 +1,45 @@
+﻿@*<div id="successMessage" style="display:none;">
+  <span>Ürün sepete eklendi.</span>
+</div>*@
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">İşlem Başarılı!</h5>
+                <button type="button" class="close rounded border-danger bg-white" data-dismiss="modal" aria-label="Close" style="color:#DC3545">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Siparişiniz başarıyla tamamlandı.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Tamam</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Order Page</h1>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div id="order-basket">
+                @Html.Partial("_BasketPartial")
+            </div>
+        </div>
+
+        <div class="col-md-9 bg-trasparent my-2 p-3 mt-2" style="position: relative;">
+            <div class="row">
+
+                <div id="order-product-list">
+                    @Html.Partial("_ProductListPartial")
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

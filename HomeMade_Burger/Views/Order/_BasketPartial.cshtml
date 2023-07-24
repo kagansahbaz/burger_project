@@ -1,0 +1,85 @@
+﻿@model List<OrderVM>
+
+
+<section class="pt-5 pb-5">
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-lg-12 col-md-12 col-12">
+                <table id="shoppingCart" class="table table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="width:60%">Product</th>
+                            <th style="width:20%">Price</th>
+                            <th style="width:10%">Qua.</th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            decimal totalPrice = 0;
+                            if (Model != null)
+                            {
+                                int i = 0;
+                                foreach (var item in Model)
+                                {
+                                    i++;
+                                    <tr>
+                                        <td data-th="Product">
+                                            <div class="row">
+                                                <div class="col-md-9 text-left mt-sm-2">
+                                                    <p class="font-weight-light">@item.ProductName</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-th="Price">@item.Price ₺</td>
+                                        <td data-th="Quantity">
+                                            <p>@item.Quantity</p>
+                                        </td>
+                                        <td class="actions" data-th="">
+                                            <div class="text-right">
+                                                <button onclick="RemoveItemBasket(@i)" class="btn btn-white border-danger bg-white btn-md mb-2">
+                                                    <i class="fas fa-trash" style="color:#DC3545"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    totalPrice += item.Price * Convert.ToDecimal(item.Quantity);
+                                }
+                                <div class="float-right text-right">
+                                    <h4>Subtotal:</h4>
+                                    <h1>@totalPrice</h1>
+                                </div>
+                            }
+                            else
+                            {
+
+                                //<tr>
+                                //    <td data-th="Product">                                        
+                                //    </td>
+                                //    <td data-th="Price">0</td>
+                                //    <td data-th="Quantity">
+                                //        <input type="number" class="form-control form-control-lg text-center" value="1">
+                                //    </td>
+                                //    <td class="actions" data-th="">
+                                //        <div class="text-right">                                            
+                                //            <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                //                <i class="fas fa-trash"></i>
+                                //            </button>
+                                //        </div>
+                                //    </td>
+                                //</tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="row mt-4 d-flex align-items-center">
+            <div class="col-sm-12 order-md-2 text-right">
+                <a id="add-order" asp-action="AddOrder" asp-controller="Order" class="btn btn-success mb-4 btn-lg pl-5 pr-5">Add Order</a>
+            </div>
+        </div>
+    </div>
+</section>

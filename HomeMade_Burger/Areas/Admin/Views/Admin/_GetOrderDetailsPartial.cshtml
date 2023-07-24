@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<OrderDetailVM>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderDetailVM item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @item.Price
+                </td>
+            </tr>
+            
+        }
+        <hr />
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Total Price:
+            </td>
+            <td>
+                @ViewBag.TotalPrice
+            </td>
+        </tr>
+    </tbody>
+</table>
